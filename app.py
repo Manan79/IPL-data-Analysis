@@ -226,7 +226,7 @@ if option == "Specific Team Analysis :chart_with_upwards_trend:":
         st.table(team_data)
     else:
         st.table(team_data.head(10))
-if option == "2025 Auction Analysis":
+if option == "2025 Auction Analysis :chart_with_upwards_trend:":
     auc = pd.read_csv('ipl_2025_auction_players.csv')
     # auc = auc[auc.Base != "-"]
     auc = auc[auc.Type != "WK"]
