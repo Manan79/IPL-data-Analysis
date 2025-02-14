@@ -5,8 +5,8 @@ import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
 
-st.set_page_config(page_title="CrickInfo", page_icon=":trophy:", layout="wide", initial_sidebar_state="expanded")
 
+st.set_page_config(page_title="CrickInfo", page_icon=":trophy:", layout="wide", initial_sidebar_state="expanded")
 st.sidebar.header("-- Welcome to CrickInfo --")
 # st.sidebar.write("This is a simple web app that shows the IPL data")
 st.sidebar.subheader("Select the The Type")
@@ -400,8 +400,14 @@ if option == "2024 Season Analysis :bookmark_tabs:":
 
     st.table(high_score.venue.value_counts().reset_index())
     venue_data = high_score.venue.value_counts().reset_index()
-    nig = px.pie(venue_data , values = 'count' , names = 'venue' , title = "counts of Venue in which 200+ scores")
-    st.plotly_chart(nig , use_container_width=True)
+    col1 , col2 = st.columns(2)
+    with col1:
+        fig = px.pie(venue_data , values = 'count' , names = 'venue' , title = "200+ scores at Venues")
+        st.plotly_chart(fig , use_container_width=True)
+        
+    with col2:
+        bar = px.bar(venue_data , y = 'count' , x = 'venue' , title = "counts of Venue in which 200+ scores")
+        st.plotly_chart(bar , use_container_width=True)
 
     st.markdown("""
     <h4 style = "color: Blue; font-size: 32px; margin-top:0px;">Highest Run-chase</h4>
@@ -422,14 +428,4 @@ if option == "2024 Season Analysis :bookmark_tabs:":
 
     
            
-            
     
-
-
-        
-
-        
-    
-
-    
-
