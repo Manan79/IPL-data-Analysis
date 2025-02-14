@@ -1,12 +1,19 @@
 import streamlit as st
+st.set_page_config(page_title="CrickInfo", page_icon=":trophy:", layout="wide", initial_sidebar_state="collapsed")
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
 
+st.markdown(
+    """
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    """,
+    unsafe_allow_html=True
+)
 
-st.set_page_config(page_title="CrickInfo", page_icon=":trophy:", layout="wide", initial_sidebar_state="collapsed")
 st.sidebar.header("-- Welcome to CrickInfo --")
 # st.sidebar.write("This is a simple web app that shows the IPL data")
 st.sidebar.subheader("Select the The Type")
