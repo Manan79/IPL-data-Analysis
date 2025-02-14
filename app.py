@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-st.set_page_config(page_title="CrickInfo", page_icon=":trophy:", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="CrickInfo", page_icon=":trophy:", layout="wide", initial_sidebar_state="collapsed")
 st.sidebar.header("-- Welcome to CrickInfo --")
 # st.sidebar.write("This is a simple web app that shows the IPL data")
 st.sidebar.subheader("Select the The Type")
